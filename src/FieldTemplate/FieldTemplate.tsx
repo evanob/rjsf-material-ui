@@ -7,6 +7,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
+import { ThemeProvider } from '@material-ui/styles';
 
 const FieldTemplate = ({
   id,
@@ -15,8 +16,9 @@ const FieldTemplate = ({
   rawErrors = [],
   rawHelp,
   rawDescription,
+  formContext,
 }: FieldTemplateProps) => {
-  return (
+  const template = (
     <FormControl fullWidth={true} error={rawErrors.length ? true : false}>
       {children}
       {displayLabel && rawDescription ? (
@@ -37,6 +39,13 @@ const FieldTemplate = ({
       )}
       {rawHelp && <FormHelperText id={id}>{rawHelp}</FormHelperText>}
     </FormControl>
+  );
+  return formContext.muiOptions && formContext.muiOptions.theme ? (
+    <ThemeProvider theme={formContext.muiOptions.theme}>
+      {template}
+    </ThemeProvider>
+  ) : (
+    template
   );
 };
 
