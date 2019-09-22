@@ -4,9 +4,6 @@
   "main": "src/index.ts",
   "module": "src/index.ts",
   "description": "Material UI theme, fields and widgets for react-jsonschema-form",
-  "files": [
-    "src"
-  ],
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
