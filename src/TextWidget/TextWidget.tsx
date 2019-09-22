@@ -25,9 +25,10 @@ const TextWidget = ({
     onChange(value === '' ? options.emptyValue : value);
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
     onBlur(id, value);
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLInputElement>) => onFocus(id, value);
+  const _onFocus = onFocus
+    ? ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
+        onFocus(id, value)
+    : undefined;
 
   return (
     <FormControl

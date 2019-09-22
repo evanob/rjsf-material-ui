@@ -65,10 +65,10 @@ const SelectWidget = ({
     onChange(processValue(schema, value));
   const _onBlur = ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
     onBlur(id, processValue(schema, value));
-  const _onFocus = ({
-    target: { value },
-  }: React.FocusEvent<HTMLInputElement>) =>
-    onFocus(id, processValue(schema, value));
+  const _onFocus = onFocus
+    ? ({ target: { value } }: React.FocusEvent<HTMLInputElement>) =>
+        onFocus(id, processValue(schema, value))
+    : undefined;
 
   return (
     <FormControl
