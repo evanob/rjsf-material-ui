@@ -3,6 +3,7 @@
   "version": "0.3.6",
   "main": "src/index.ts",
   "module": "src/index.ts",
+  "types": "src/index.ts",
   "description": "Material UI theme, fields and widgets for react-jsonschema-form",
   "scripts": {
     "start": "tsdx watch",
