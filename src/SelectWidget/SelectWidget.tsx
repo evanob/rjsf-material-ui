@@ -54,6 +54,7 @@ const SelectWidget = ({
   onChange,
   onBlur,
   onFocus,
+  formContext,
 }: any) => {
   const { enumOptions, enumDisabled } = options;
 
@@ -88,6 +89,7 @@ const SelectWidget = ({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
+        variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
       >
         {(enumOptions as any).map(({ value, label }: any, i: number) => {
           const disabled: any =

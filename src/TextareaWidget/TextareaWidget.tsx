@@ -23,6 +23,7 @@ const TextareaWidget = ({
   onChange,
   options,
   schema,
+  formContext,
 }: CustomWidgetProps) => {
   const _onChange = ({
     target: { value },
@@ -53,6 +54,7 @@ const TextareaWidget = ({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
+        variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
       />
     </FormControl>
   );

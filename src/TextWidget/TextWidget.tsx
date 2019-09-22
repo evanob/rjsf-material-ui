@@ -18,6 +18,7 @@ const TextWidget = ({
   autofocus,
   options,
   schema,
+  formContext,
 }: WidgetProps) => {
   const _onChange = ({
     target: { value },
@@ -47,6 +48,7 @@ const TextWidget = ({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
+        variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
       />
     </FormControl>
   );
