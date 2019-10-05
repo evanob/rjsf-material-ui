@@ -19,6 +19,7 @@ const PasswordWidget = ({
   options,
   autofocus,
   schema,
+  formContext,
 }: WidgetProps) => {
   const _onChange = ({
     target: { value },
@@ -35,6 +36,7 @@ const PasswordWidget = ({
       fullWidth={true}
       //error={!!rawErrors}
       required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
       <InputLabel>{label || schema.title}</InputLabel>
       <Input

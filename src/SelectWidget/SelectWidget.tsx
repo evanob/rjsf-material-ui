@@ -52,8 +52,8 @@ const SelectWidget = ({
   multiple,
   autofocus,
   onChange,
-  onBlur,
   onFocus,
+  onBlur,
   formContext,
 }: any) => {
   const { enumOptions, enumDisabled } = options;
@@ -76,6 +76,7 @@ const SelectWidget = ({
       fullWidth={true}
       //error={!!rawErrors}
       required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
       <InputLabel shrink={true} htmlFor={id}>
         {label || schema.title}
@@ -89,7 +90,6 @@ const SelectWidget = ({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
-        variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
       >
         {(enumOptions as any).map(({ value, label }: any, i: number) => {
           const disabled: any =

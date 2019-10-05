@@ -40,6 +40,7 @@ const TextareaWidget = ({
       fullWidth={true}
       //error={!!rawErrors}
       required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
       <TextField
         id={id}

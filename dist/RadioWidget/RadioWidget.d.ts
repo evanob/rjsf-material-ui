@@ -12,5 +12,6 @@ declare const RadioWidget: ({
   onChange,
   onBlur,
   onFocus,
+  formContext,
 }: WidgetProps) => JSX.Element;
 export default RadioWidget;

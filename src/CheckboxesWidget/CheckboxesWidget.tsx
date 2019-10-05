@@ -34,6 +34,7 @@ const CheckboxesWidget = ({
   onChange,
   onBlur,
   onFocus,
+  formContext,
 }: WidgetProps) => {
   const { enumOptions, enumDisabled, inline } = options;
 
@@ -57,7 +58,11 @@ const CheckboxesWidget = ({
   }: React.FocusEvent<HTMLButtonElement>) => onFocus(id, value);
 
   return (
-    <FormControl fullWidth={true} required={required}>
+    <FormControl
+      fullWidth={true}
+      required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
+    >
       <FormLabel htmlFor={id}>{label || schema.title}</FormLabel>
       <FormGroup>
         {(enumOptions as any).map((option: any, index: number) => {

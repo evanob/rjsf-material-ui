@@ -19,7 +19,11 @@ const FieldTemplate = ({
   formContext,
 }: FieldTemplateProps) => {
   const template = (
-    <FormControl fullWidth={true} error={rawErrors.length ? true : false}>
+    <FormControl
+      fullWidth={true}
+      error={rawErrors.length ? true : false}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
+    >
       {children}
       {displayLabel && rawDescription ? (
         <Typography variant="caption" color="textSecondary">

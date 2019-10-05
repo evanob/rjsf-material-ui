@@ -11,8 +11,8 @@ declare const SelectWidget: ({
   multiple,
   autofocus,
   onChange,
-  onBlur,
   onFocus,
+  onBlur,
   formContext,
 }: any) => JSX.Element;
 export default SelectWidget;

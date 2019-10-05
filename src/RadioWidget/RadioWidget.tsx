@@ -20,6 +20,7 @@ const RadioWidget = ({
   onChange,
   onBlur,
   onFocus,
+  formContext,
 }: WidgetProps) => {
   // Generating a unique field name to identify this set of radio buttons
   const name = Math.random().toString();
@@ -36,7 +37,11 @@ const RadioWidget = ({
   const row = options ? options.inline : false;
 
   return (
-    <FormControl fullWidth={true} required={required}>
+    <FormControl
+      fullWidth={true}
+      required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
+    >
       <FormLabel htmlFor={id}>{label || schema.title}</FormLabel>
       <RadioGroup
         name={name}

@@ -477,6 +477,7 @@ var FieldTemplate = function FieldTemplate(_ref) {
     {
       fullWidth: true,
       error: rawErrors.length ? true : false,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     children,
     displayLabel && rawDescription
@@ -599,7 +600,8 @@ var CheckboxWidget = function CheckboxWidget(props) {
     autofocus = props.autofocus,
     onChange = props.onChange,
     onBlur = props.onBlur,
-    onFocus = props.onFocus;
+    onFocus = props.onFocus,
+    formContext = props.formContext;
 
   var _onChange = function _onChange(_ref, checked) {
     _objectDestructuringEmpty(_ref);
@@ -622,6 +624,7 @@ var CheckboxWidget = function CheckboxWidget(props) {
     {
       fullWidth: true,
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(FormControlLabel, {
       control: React.createElement(Checkbox, {
@@ -667,7 +670,8 @@ var CheckboxesWidget = function CheckboxesWidget(_ref) {
     required = _ref.required,
     onChange = _ref.onChange,
     onBlur = _ref.onBlur,
-    onFocus = _ref.onFocus;
+    onFocus = _ref.onFocus,
+    formContext = _ref.formContext;
   var enumOptions = options.enumOptions,
     enumDisabled = options.enumDisabled,
     inline = options.inline;
@@ -703,6 +707,7 @@ var CheckboxesWidget = function CheckboxesWidget(_ref) {
     {
       fullWidth: true,
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(
       FormLabel,
@@ -755,7 +760,8 @@ var PasswordWidget = function PasswordWidget(_ref) {
     onChange = _ref.onChange,
     options = _ref.options,
     autofocus = _ref.autofocus,
-    schema = _ref.schema;
+    schema = _ref.schema,
+    formContext = _ref.formContext;
 
   var _onChange = function _onChange(_ref2) {
     var value = _ref2.target.value;
@@ -778,6 +784,7 @@ var PasswordWidget = function PasswordWidget(_ref) {
       fullWidth: true,
       //error={!!rawErrors}
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(InputLabel, null, label || schema.title),
     React.createElement(Input, {
@@ -804,7 +811,8 @@ var RadioWidget = function RadioWidget(_ref) {
     label = _ref.label,
     onChange = _ref.onChange,
     onBlur = _ref.onBlur,
-    onFocus = _ref.onFocus;
+    onFocus = _ref.onFocus,
+    formContext = _ref.formContext;
   // Generating a unique field name to identify this set of radio buttons
   var name = Math.random().toString();
   var enumOptions = options.enumOptions,
@@ -832,6 +840,7 @@ var RadioWidget = function RadioWidget(_ref) {
     {
       fullWidth: true,
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(
       FormLabel,
@@ -877,6 +886,7 @@ var RangeWidget = function RangeWidget(_ref) {
     onFocus = _ref.onFocus,
     options = _ref.options,
     schema = _ref.schema,
+    formContext = _ref.formContext,
     onChange = _ref.onChange,
     required = _ref.required,
     label = _ref.label,
@@ -919,6 +929,7 @@ var RangeWidget = function RangeWidget(_ref) {
         fullWidth: true,
         //error={!!rawErrors}
         required: required,
+        variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
       },
       React.createElement(
         FormLabel,
@@ -995,8 +1006,8 @@ var SelectWidget = function SelectWidget(_ref) {
     multiple = _ref.multiple,
     autofocus = _ref.autofocus,
     onChange = _ref.onChange,
-    onBlur = _ref.onBlur,
     onFocus = _ref.onFocus,
+    onBlur = _ref.onBlur,
     formContext = _ref.formContext;
   var enumOptions = options.enumOptions,
     enumDisabled = options.enumDisabled;
@@ -1025,6 +1036,7 @@ var SelectWidget = function SelectWidget(_ref) {
       fullWidth: true,
       //error={!!rawErrors}
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(
       InputLabel,
@@ -1045,7 +1057,6 @@ var SelectWidget = function SelectWidget(_ref) {
         onChange: _onChange,
         onBlur: _onBlur,
         onFocus: _onFocus,
-        variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
       },
       enumOptions.map(function(_ref5, i) {
         var value = _ref5.value,
@@ -1102,6 +1113,7 @@ var TextareaWidget = function TextareaWidget(_ref) {
       fullWidth: true,
       //error={!!rawErrors}
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(TextField, {
       id: id,
@@ -1186,7 +1198,8 @@ var UpDownWidget = function UpDownWidget(_ref) {
     onChange = _ref.onChange,
     onBlur = _ref.onBlur,
     onFocus = _ref.onFocus,
-    autofocus = _ref.autofocus;
+    autofocus = _ref.autofocus,
+    formContext = _ref.formContext;
 
   var _onChange = function _onChange(_ref2) {
     var value = _ref2.target.value;
@@ -1209,6 +1222,7 @@ var UpDownWidget = function UpDownWidget(_ref) {
       fullWidth: true,
       //error={!!rawErrors}
       required: required,
+      variant: formContext.muiOptions && formContext.muiOptions.fieldVariant,
     },
     React.createElement(InputLabel, null, label),
     React.createElement(Input, {

@@ -18,6 +18,7 @@ const CheckboxWidget = (props: WidgetProps) => {
     onChange,
     onBlur,
     onFocus,
+    formContext,
   } = props;
 
   const _onChange = ({}, checked: boolean) => onChange(checked);
@@ -29,7 +30,11 @@ const CheckboxWidget = (props: WidgetProps) => {
   }: React.FocusEvent<HTMLButtonElement>) => onFocus(id, value);
 
   return (
-    <FormControl fullWidth={true} required={required}>
+    <FormControl
+      fullWidth={true}
+      required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
+    >
       <FormControlLabel
         control={
           <Checkbox

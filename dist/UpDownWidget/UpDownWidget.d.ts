@@ -11,5 +11,6 @@ declare const UpDownWidget: ({
   onBlur,
   onFocus,
   autofocus,
+  formContext,
 }: WidgetProps) => JSX.Element;
 export default UpDownWidget;

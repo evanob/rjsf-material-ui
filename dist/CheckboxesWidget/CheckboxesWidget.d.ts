@@ -13,5 +13,6 @@ declare const CheckboxesWidget: ({
   onChange,
   onBlur,
   onFocus,
+  formContext,
 }: WidgetProps) => JSX.Element;
 export default CheckboxesWidget;

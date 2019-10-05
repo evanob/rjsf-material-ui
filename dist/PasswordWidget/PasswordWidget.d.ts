@@ -13,5 +13,6 @@ declare const PasswordWidget: ({
   options,
   autofocus,
   schema,
+  formContext,
 }: WidgetProps) => JSX.Element;
 export default PasswordWidget;

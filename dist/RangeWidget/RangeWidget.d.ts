@@ -8,6 +8,7 @@ declare const RangeWidget: ({
   onFocus,
   options,
   schema,
+  formContext,
   onChange,
   required,
   label,

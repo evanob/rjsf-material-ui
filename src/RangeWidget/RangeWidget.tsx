@@ -16,7 +16,7 @@ const RangeWidget = ({
   onFocus,
   options,
   schema,
-  //formContext,
+  formContext,
   //registry,
   //rawErrors,
   onChange,
@@ -40,6 +40,7 @@ const RangeWidget = ({
         fullWidth={true}
         //error={!!rawErrors}
         required={required}
+        variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
       >
         <FormLabel id={id}>{label}</FormLabel>
         <Slider

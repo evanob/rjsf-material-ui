@@ -17,6 +17,7 @@ const UpDownWidget = ({
   onBlur,
   onFocus,
   autofocus,
+  formContext,
 }: WidgetProps) => {
   const _onChange = ({
     target: { value },
@@ -32,6 +33,7 @@ const UpDownWidget = ({
       fullWidth={true}
       //error={!!rawErrors}
       required={required}
+      variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
       <InputLabel>{label}</InputLabel>
       <Input
