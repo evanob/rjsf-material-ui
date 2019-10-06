@@ -1051,7 +1051,6 @@ var SelectWidget = function SelectWidget(_ref) {
     React.createElement(
       InputLabel,
       {
-        shrink: true,
         htmlFor: id,
         ref: inputLabel,
       },

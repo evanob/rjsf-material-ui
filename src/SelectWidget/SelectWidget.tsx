@@ -85,7 +85,7 @@ const SelectWidget = ({
       required={required}
       variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
-      <InputLabel shrink={true} htmlFor={id} ref={inputLabel}>
+      <InputLabel htmlFor={id} ref={inputLabel}>
         {label || schema.title}
       </InputLabel>
       <Select
