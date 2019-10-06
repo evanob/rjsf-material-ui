@@ -1030,6 +1030,16 @@ var SelectWidget = function SelectWidget(_ref) {
       }
     : undefined;
 
+  var inputLabel = React.useRef(null);
+
+  var _React$useState = React.useState(0),
+    labelWidth = _React$useState[0],
+    setLabelWidth = _React$useState[1];
+
+  React.useEffect(function() {
+    if (inputLabel && inputLabel.current)
+      setLabelWidth(inputLabel.current.offsetWidth);
+  }, []);
   return React.createElement(
     FormControl,
     {
@@ -1043,6 +1053,7 @@ var SelectWidget = function SelectWidget(_ref) {
       {
         shrink: true,
         htmlFor: id,
+        ref: inputLabel,
       },
       label || schema.title
     ),
@@ -1052,6 +1063,10 @@ var SelectWidget = function SelectWidget(_ref) {
         multiple: typeof multiple === 'undefined' ? false : multiple,
         value: typeof value === 'undefined' ? emptyValue : value,
         required: required,
+        inputProps: {
+          id: id,
+        },
+        labelWidth: labelWidth,
         disabled: disabled || readonly,
         autoFocus: autofocus,
         onChange: _onChange,

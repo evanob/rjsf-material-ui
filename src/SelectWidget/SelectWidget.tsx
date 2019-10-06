@@ -71,6 +71,13 @@ const SelectWidget = ({
         onFocus(id, processValue(schema, value))
     : undefined;
 
+  const inputLabel = React.useRef<HTMLLabelElement>(null);
+  const [labelWidth, setLabelWidth] = React.useState(0);
+  React.useEffect(() => {
+    if (inputLabel && inputLabel.current)
+      setLabelWidth(inputLabel.current.offsetWidth);
+  }, []);
+
   return (
     <FormControl
       fullWidth={true}
@@ -78,13 +85,15 @@ const SelectWidget = ({
       required={required}
       variant={formContext.muiOptions && formContext.muiOptions.fieldVariant}
     >
-      <InputLabel shrink={true} htmlFor={id}>
+      <InputLabel shrink={true} htmlFor={id} ref={inputLabel}>
         {label || schema.title}
       </InputLabel>
       <Select
         multiple={typeof multiple === 'undefined' ? false : multiple}
         value={typeof value === 'undefined' ? emptyValue : value}
         required={required}
+        inputProps={{ id: id }}
+        labelWidth={labelWidth}
         disabled={disabled || readonly}
         autoFocus={autofocus}
         onChange={_onChange}
